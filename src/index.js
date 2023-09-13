@@ -62,7 +62,7 @@ function Header() {
   const style = {};
 
   return (
-    <header className="header footer">
+    <header className="header">
       <h1 style={style}>Fast React Pizza Co.</h1>
     </header>
   );
@@ -79,11 +79,14 @@ function Menu() {
 
       {/* Rendering List */}
       {numPizzas > 0 ? (
-        <ul className="pizzas">
-          {pizzas.map((pizza) => (
-            <Pizza key={pizza.name} pizzaObj={pizza} />
-          ))}
-        </ul>
+        <React.Fragment>
+          <p>The best pizza ever!</p>
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza key={pizza.name} pizzaObj={pizza} />
+            ))}
+          </ul>
+        </React.Fragment>
       ) : (
         <p>We're still working on my menu. Please come back later :)</p>
       )}
